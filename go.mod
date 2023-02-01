@@ -1,3 +1,4 @@
+// +heroku install ./cmd/server/server.go
 module werewolf
 
 go 1.17
