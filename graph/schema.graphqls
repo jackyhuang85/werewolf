@@ -1,0 +1,30 @@
+# GraphQL schema
+
+type Query {
+  room(roomID: ID!): Room!
+}
+
+input NewRoom {
+  playerName: String!
+}
+
+type Player {
+  id: ID!
+  name: String!
+}
+
+type Response {
+  player: Player!
+  room: Room!
+}
+
+type Room {
+  id: ID!
+  host: Player!
+  members: [Player!]!
+}
+
+type Mutation {
+  createRoom(input: NewRoom!): Response!
+  joinRoom(name: String!, roomID: ID!): Response!
+}
